@@ -1,0 +1,30 @@
+;;
+;; Inferior Lisp mode runs Clojure
+;;
+(setq inferior-lisp-program "java -cp /home/bill/software/clojure-1.5.1/clojure-1.5.1.jar clojure.main")
+
+;;============================================================
+;; minibuffer space completion
+;;============================================================
+(define-key minibuffer-local-filename-completion-map (kbd "SPC")
+        'minibuffer-complete-word)
+
+(define-key minibuffer-local-must-match-filename-map (kbd "SPC")
+        'minibuffer-complete-word)
+
+;;
+;; Some key bindinds
+;;
+(global-set-key [f1] 'shell)
+(global-set-key [f2] 'inferior-lisp)
+(global-set-key [f5] (lambda () (interactive) (revert-buffer nil :t)))
+(global-set-key "\C-o" 'goto-line)
+
+
+
+
+
+
+
+
+
