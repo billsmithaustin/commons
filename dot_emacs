@@ -7,18 +7,31 @@
 ;; minibuffer space completion
 ;;============================================================
 (define-key minibuffer-local-filename-completion-map (kbd "SPC")
-        'minibuffer-complete-word)
+  'minibuffer-complete-word)
 
 (define-key minibuffer-local-must-match-filename-map (kbd "SPC")
-        'minibuffer-complete-word)
+  'minibuffer-complete-word)
 
 ;;
 ;; Some key bindinds
 ;;
 (global-set-key [f1] 'shell)
 (global-set-key [f2] 'inferior-lisp)
+(global-set-key [f3] 'run-octave)
 (global-set-key [f5] (lambda () (interactive) (revert-buffer nil :t)))
 (global-set-key "\C-o" 'goto-line)
+
+
+;;
+;; emacs interacting with X clipboard
+;;
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+
+
+(autoload 'octave-mode "octave-mod" nil t)
+(setq auto-mode-alist
+      (cons '("\\.m$" . octave-mode) auto-mode-alist))
 
 ;; To save space on my low-res screen, hide the Mode column from the buffer window
 ;; Couldn't get (require 'buff-menu+) to work.
@@ -26,14 +39,14 @@
 (buffer-menu-set-default-value 'Buffer-menu-mode-flag nil)
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 83 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
