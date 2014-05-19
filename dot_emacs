@@ -1,7 +1,7 @@
 ;;
 ;; Inferior Lisp mode runs Clojure
 ;;
-(setq inferior-lisp-program "java -cp /home/bill/software/clojure-1.5.1/clojure-1.5.1.jar clojure.main")
+(setq inferior-lisp-program "java -cp /home/bill/software/clojure-1.6.0/clojure-1.6.0.jar clojure.main")
 
 ;;============================================================
 ;; minibuffer space completion
@@ -35,8 +35,8 @@
 
 ;; To save space on my low-res screen, hide the Mode column from the buffer window
 ;; Couldn't get (require 'buff-menu+) to work.
-(load-file "~/.emacs.d/buff-menu+.elc")
-(buffer-menu-set-default-value 'Buffer-menu-mode-flag nil)
+;;(load-file "~/.emacs.d/buff-menu+.elc")
+;;(buffer-menu-set-default-value 'Buffer-menu-mode-flag nil)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
